@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Testing Form</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Form test</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="pt-4"></div>
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
+  <div>
+    <h3 class="text-center">Form gowebs test</h3>
+  </div>
+  <form method="post" autocomplete="off" name="hello-sheet">
+    <div class="form-group">
+      <label for="name">Enter name</label>
+      <input type="text" class="form-control"  placeholder="Enter Name Ex: gowebs" name="name">
     </div>
-    <div class="col-sm shadow bg-white rounded">
-      <form>
-      <h1 > TEST Form</h1>
-       <label for="exampleInputEmail1">First Name</label>
-      <div class="form-group">
-      <input type="text" class="form-control" name="firstname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your first name">
- <label for="exampleInputEmail1">Last Name</label>
-<div class="form-group">
-      <input type="text" class="form-control" name="lastname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Last Name">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+ 
+  <button type="submit" name="submit" value="Send message" class="btn btn-primary">Submit</button>
 </form>
-    </div>
-    <div class="col-sm">
-    </div>
-  </div>
 </div>
 <script>
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzSyY3xIwR07NcJBGaH3yFwzU4WuDrw_mvYHqRjbKExYv7yDfTbbOILrU7vqSXpwD_A/exec'
-const form = document.forms['google-sheets']
-form.addEventListener('submit',e =>{
-  e.preventDefault()
-  fetch(scriptURL,{ method: 'POST', body: new FormData(form)})
-  .then(response => alert("Thanks for filling the form"))
-  .catch(error => console.error('Error!', error.message))
-})
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
+            const scriptURL = 'https://script.google.com/macros/s/AKfycby5rfBezTelm4wNpeYXE9LEk1NLE_-rzyqOY31ZqRtZUmsygyVAau1r5jz6MmzynKY/exec'
+            const form = document.forms['hello-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        </script>
+
 </body>
 </html>
