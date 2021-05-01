@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Testing Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm shadow bg-white rounded">
+      <form>
+      <h1 > TEST Form</h1>
+       <label for="exampleInputEmail1">First Name</label>
+      <div class="form-group">
+      <input type="text" class="form-control" name="firstname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your first name">
+ <label for="exampleInputEmail1">Last Name</label>
+<div class="form-group">
+      <input type="text" class="form-control" name="lastname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Last Name">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzSyY3xIwR07NcJBGaH3yFwzU4WuDrw_mvYHqRjbKExYv7yDfTbbOILrU7vqSXpwD_A/exec'
+const form = document.forms['google-sheets']
+form.addEventListener('submit',e =>{
+  e.preventDefault()
+  fetch(scriptURL,{ method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thanks for filling the form"))
+  .catch(error => console.error('Error!', error.message))
+})
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+</body>
+</html>
