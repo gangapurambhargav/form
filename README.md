@@ -1,2 +1,2 @@
 # form
-A Simple Form Web App which takes the form values in to google sheets! 
+Web App like Google Form Drops data in google sheets directly without any third-party service like google forms!
